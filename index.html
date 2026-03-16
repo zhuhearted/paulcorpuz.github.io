@@ -3,13 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Paul Corpuz – Operations & Workforce Analyst</title>
 
 <style>
 
+html{
+scroll-behavior:smooth;
+}
+
 body{
-font-family: Arial, sans-serif;
 margin:0;
+font-family:Arial;
 background:#0f172a;
 color:#e2e8f0;
 }
@@ -22,25 +27,30 @@ background:#020617;
 
 header h1{
 font-size:40px;
-margin-bottom:10px;
 }
 
 .tagline{
-font-size:18px;
 color:#94a3b8;
+margin-top:10px;
+}
+
+.profile{
+width:150px;
+border-radius:50%;
+margin-top:20px;
 }
 
 nav{
-text-align:center;
 background:#020617;
+text-align:center;
 padding:15px;
 position:sticky;
 top:0;
 }
 
 nav a{
-color:#e2e8f0;
 margin:0 15px;
+color:#e2e8f0;
 text-decoration:none;
 font-weight:bold;
 }
@@ -48,7 +58,15 @@ font-weight:bold;
 section{
 max-width:900px;
 margin:auto;
-padding:60px 20px;
+padding:70px 20px;
+opacity:0;
+transform:translateY(40px);
+transition:all .8s ease;
+}
+
+section.show{
+opacity:1;
+transform:translateY(0);
 }
 
 h2{
@@ -56,25 +74,50 @@ border-bottom:2px solid #334155;
 padding-bottom:10px;
 }
 
-.skills{
-display:flex;
-flex-wrap:wrap;
-gap:10px;
-margin-top:20px;
-}
-
 .skill{
-background:#1e293b;
-padding:8px 15px;
-border-radius:6px;
+margin:15px 0;
 }
 
-.job{
-margin-top:25px;
-}
-
-.job h3{
+.skill-name{
 margin-bottom:5px;
+}
+
+.skill-bar{
+background:#1e293b;
+border-radius:6px;
+overflow:hidden;
+}
+
+.skill-fill{
+height:10px;
+background:#3b82f6;
+width:0;
+transition:width 1.5s ease;
+}
+
+.dashboard{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:20px;
+margin-top:30px;
+}
+
+.card{
+background:#1e293b;
+padding:20px;
+border-radius:10px;
+text-align:center;
+}
+
+.card h3{
+margin:0;
+color:#94a3b8;
+}
+
+.card p{
+font-size:28px;
+margin-top:10px;
+color:#3b82f6;
 }
 
 .resume-btn{
@@ -92,12 +135,6 @@ text-align:center;
 padding:30px;
 background:#020617;
 margin-top:40px;
-}
-
-.profile{
-width:150px;
-border-radius:50%;
-margin-top:20px;
 }
 
 </style>
@@ -121,9 +158,9 @@ Customer Service Professional transitioning into Workforce Real-Time Management,
 
 <a href="#about">About</a>
 <a href="#skills">Skills</a>
+<a href="#dashboard">Dashboard</a>
 <a href="#experience">Experience</a>
 <a href="#resume">Resume</a>
-<a href="#blog">Blog</a>
 <a href="#contact">Contact</a>
 
 </nav>
@@ -133,40 +170,71 @@ Customer Service Professional transitioning into Workforce Real-Time Management,
 <h2>About Me</h2>
 
 <p>
-Hello! I'm Paul Corpuz, a customer service professional with experience in operations and workforce management.
+I am an operations professional with experience in customer support, workforce planning, and real-time operations monitoring. I graduated from Informatics International College with an Advanced Diploma in Computer Studies Major in Programming.
 </p>
 
 <p>
-I graduated from Informatics International College with an Advanced Diploma in Computer Studies Major in Programming.
-</p>
-
-<p>
-My career journey has allowed me to gain experience in customer service, workforce planning, and real-time operations monitoring.
-</p>
-
-<p>
-I aspire to continue growing as a Workforce Management Analyst where I can apply data analysis, forecasting, and operational insights to improve team performance and efficiency.
+My goal is to grow further as a Workforce Management Analyst where I can apply forecasting, real-time monitoring, and operational analytics to improve team performance and service levels.
 </p>
 
 </section>
 
 <section id="skills">
 
-<h2>Skills</h2>
+<h2>Professional Skills</h2>
 
-<div class="skills">
+<div class="skill">
+<div class="skill-name">Excel / Data Analysis</div>
+<div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+</div>
 
-<div class="skill">Excel</div>
-<div class="skill">Google Sheets</div>
-<div class="skill">Java</div>
-<div class="skill">PC Troubleshooting</div>
-<div class="skill">MidJourney AI</div>
-<div class="skill">Root Cause Analysis</div>
-<div class="skill">Capacity Planning</div>
-<div class="skill">Data Interpretation</div>
-<div class="skill">Teamwork</div>
-<div class="skill">Communication</div>
-<div class="skill">Problem Solving</div>
+<div class="skill">
+<div class="skill-name">Workforce Management</div>
+<div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+</div>
+
+<div class="skill">
+<div class="skill-name">Root Cause Analysis</div>
+<div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+</div>
+
+<div class="skill">
+<div class="skill-name">Customer Service Operations</div>
+<div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div>
+</div>
+
+<div class="skill">
+<div class="skill-name">Problem Solving</div>
+<div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+</div>
+
+</section>
+
+<section id="dashboard">
+
+<h2>Workforce Management Dashboard</h2>
+
+<div class="dashboard">
+
+<div class="card">
+<h3>Service Level</h3>
+<p>92%</p>
+</div>
+
+<div class="card">
+<h3>Occupancy</h3>
+<p>87%</p>
+</div>
+
+<div class="card">
+<h3>Forecast Accuracy</h3>
+<p>95%</p>
+</div>
+
+<div class="card">
+<h3>AHT</h3>
+<p>6.2m</p>
+</div>
 
 </div>
 
@@ -176,55 +244,15 @@ I aspire to continue growing as a Workforce Management Analyst where I can apply
 
 <h2>Work Experience</h2>
 
-<div class="job">
-<h3>Accenture</h3>
-<p>Customer Service Analyst | March 2024 – Present</p>
-<ul>
-<li>Manage customer inquiries for Coinbase</li>
-<li>Ensure high customer satisfaction</li>
-<li>Collaborate to improve service delivery</li>
-</ul>
-</div>
+<p><b>Accenture</b> – Customer Service Analyst (2024 – Present)</p>
 
-<div class="job">
-<h3>Alorica Philippines</h3>
-<p>Customer Service Analyst | Dec 2023 – March 2024</p>
-<ul>
-<li>Delivered high-quality customer support</li>
-<li>Resolved issues efficiently</li>
-<li>Helped train new team members</li>
-</ul>
-</div>
+<p><b>Alorica Philippines</b> – Customer Service Analyst (2023 – 2024)</p>
 
-<div class="job">
-<h3>TaskUs</h3>
-<p>Workforce Capacity Planner | Feb 2022 – Nov 2023</p>
-<ul>
-<li>Developed workforce planning strategies</li>
-<li>Forecasted operational demand</li>
-<li>Optimized staffing allocation</li>
-</ul>
-</div>
+<p><b>TaskUs</b> – Workforce Capacity Planner (2022 – 2023)</p>
 
-<div class="job">
-<h3>Concentrix</h3>
-<p>Workforce Real-Time Analyst | Feb 2016 – Feb 2022</p>
-<ul>
-<li>Monitored call volumes and staffing levels</li>
-<li>Maintained service targets</li>
-<li>Generated workforce performance reports</li>
-</ul>
-</div>
+<p><b>Concentrix</b> – Workforce Real-Time Analyst (2016 – 2022)</p>
 
-<div class="job">
-<h3>Concentrix</h3>
-<p>Technical Support Representative | Feb 2014 – Feb 2016</p>
-<ul>
-<li>Resolved customer technical issues</li>
-<li>Provided troubleshooting support</li>
-<li>Created documentation for common problems</li>
-</ul>
-</div>
+<p><b>Concentrix</b> – Technical Support Representative (2014 – 2016)</p>
 
 </section>
 
@@ -232,17 +260,7 @@ I aspire to continue growing as a Workforce Management Analyst where I can apply
 
 <h2>Resume</h2>
 
-<p>You can download my resume below.</p>
-
 <a href="resume.pdf" class="resume-btn">Download Resume</a>
-
-</section>
-
-<section id="blog">
-
-<h2>Blog</h2>
-
-<p>Future posts will include insights about workforce management, Excel tips, AI tools, and operational strategies.</p>
 
 </section>
 
@@ -253,12 +271,14 @@ I aspire to continue growing as a Workforce Management Analyst where I can apply
 <p>Email: zhuhearted01@gmail.com</p>
 
 <p>
-Facebook:
+Facebook  
+<br>
 <a href="https://www.facebook.com/JHINRI1">View Profile</a>
 </p>
 
 <p>
-Instagram:
+Instagram  
+<br>
 <a href="https://www.instagram.com/grandheart20">View Profile</a>
 </p>
 
@@ -266,9 +286,31 @@ Instagram:
 
 <footer>
 
-<p>© 2026 Paul Corpuz | Operations & Workforce Analyst</p>
+© 2026 Paul Corpuz – Operations & Workforce Analyst
 
 </footer>
+
+<script>
+
+const sections = document.querySelectorAll("section");
+
+window.addEventListener("scroll", () => {
+
+sections.forEach(section => {
+
+const top = section.getBoundingClientRect().top;
+
+if(top < window.innerHeight - 100){
+
+section.classList.add("show");
+
+}
+
+});
+
+});
+
+</script>
 
 </body>
 </html>
